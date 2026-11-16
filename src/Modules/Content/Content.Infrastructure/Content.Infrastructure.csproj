@@ -6,4 +6,20 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.14" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Content.Application\Content.Application.csproj" />
+      <ProjectReference Include="..\Content.Domain\Content.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.EntityFrameworkCore.Relational">
+        <HintPath>..\..\..\..\..\..\.nuget\packages\microsoft.entityframeworkcore.relational\10.0.14\lib\net10.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
