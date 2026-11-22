@@ -1,5 +1,3 @@
-using Content.Application;
-
 namespace SharedKernel;
 
 public sealed class Decorator<TInput, TOutput>(IUnitOfWork unitOfWork, IUseCase<TInput, TOutput> inner)

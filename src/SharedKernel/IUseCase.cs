@@ -1,6 +1,4 @@
-using SharedKernel;
-
-namespace Content.Application;
+namespace SharedKernel;
 
 public interface IUseCase<in TInput, TOutput>
 {

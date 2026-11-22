@@ -1,4 +1,4 @@
-namespace Content.Application;
+namespace SharedKernel;
 
 public interface IUnitOfWork
 {

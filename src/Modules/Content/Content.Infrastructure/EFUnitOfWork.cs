@@ -1,4 +1,5 @@
 using Content.Application;
+using SharedKernel;
 
 namespace Content.Infrastructure;
 
