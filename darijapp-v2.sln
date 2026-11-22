@@ -12,6 +12,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content.Contracts", "src\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content.Infrastructure", "src\Modules\Content\Content.Infrastructure\Content.Infrastructure.csproj", "{F9D1BC26-2169-4E98-B95B-6D615044A77E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Application", "src\Modules\Identity\Identity.Application\Identity.Application.csproj", "{9C4E07C8-A15E-4DAA-821E-901299DBBC5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Infrastructure", "src\Modules\Identity\Identity.Infrastructure\Identity.Infrastructure.csproj", "{9AC6284E-BEE8-4544-B6A2-3D32A64CFD5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +46,13 @@ Global
 		{F9D1BC26-2169-4E98-B95B-6D615044A77E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9D1BC26-2169-4E98-B95B-6D615044A77E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9D1BC26-2169-4E98-B95B-6D615044A77E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C4E07C8-A15E-4DAA-821E-901299DBBC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C4E07C8-A15E-4DAA-821E-901299DBBC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C4E07C8-A15E-4DAA-821E-901299DBBC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C4E07C8-A15E-4DAA-821E-901299DBBC5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AC6284E-BEE8-4544-B6A2-3D32A64CFD5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC6284E-BEE8-4544-B6A2-3D32A64CFD5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC6284E-BEE8-4544-B6A2-3D32A64CFD5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AC6284E-BEE8-4544-B6A2-3D32A64CFD5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
