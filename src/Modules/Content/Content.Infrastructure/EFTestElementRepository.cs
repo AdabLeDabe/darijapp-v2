@@ -5,12 +5,12 @@ namespace Content.Infrastructure;
 
 public class EFTestElementRepository(TestDbContext dbContext) : ITestElementRepository
 {
-    public void AddElement(TestElement element)
+    public async Task AddElement(TestElement element)
     {
-        dbContext.TestElements.Add(element);
+        await dbContext.TestElements.AddAsync(element);
     }
 
-    public void RemoveElement(int id)
+    public Task RemoveElement(int id)
     {
         var element = dbContext.TestElements.FirstOrDefault(e => e.Id == id);
 
@@ -18,9 +18,11 @@ public class EFTestElementRepository(TestDbContext dbContext) : ITestElementRepo
         {
             dbContext.TestElements.Remove(element);
         }
+
+        return Task.CompletedTask;
     }
 
-    public IQueryable<TestElement> GetElements()
+    public async Task<IQueryable<TestElement>> GetElements()
     {
         return dbContext.TestElements.AsQueryable();
     }

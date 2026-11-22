@@ -16,10 +16,4 @@
       <ProjectReference Include="..\Content.Domain\Content.Domain.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Reference Include="Microsoft.EntityFrameworkCore.Relational">
-        <HintPath>..\..\..\..\..\..\.nuget\packages\microsoft.entityframeworkcore.relational\10.0.14\lib\net10.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
-      </Reference>
-    </ItemGroup>
-
 </Project>

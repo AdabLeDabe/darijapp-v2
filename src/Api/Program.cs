@@ -17,6 +17,6 @@ builder.Services.AddScoped<GetElementsUseCase>();
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
-app.MapGet("/tests", (GetElementsUseCase useCase) => useCase.Execute(new()).Content);
+app.MapGet("/tests", async (GetElementsUseCase useCase) => (await useCase.ExecuteAsync(new())).Content);
 
 app.Run();

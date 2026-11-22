@@ -5,13 +5,13 @@ namespace Content.Application;
 
 public sealed class AddElementUseCase(ITestElementRepository repository) : IUseCase<AddElementInput, VoidOutput>
 {
-    public Result<VoidOutput> Execute(AddElementInput input)
+    public async Task<Result<VoidOutput>> ExecuteAsync(AddElementInput input)
     {
         var testElement = TestElement.Create(input.Content);
 
         if (testElement is { Status: ResultStatus.Success, Content: not null })
         {
-            repository.AddElement(testElement.Content);
+            await repository.AddElement(testElement.Content);
             return Result<VoidOutput>.Success(new());
         }
 

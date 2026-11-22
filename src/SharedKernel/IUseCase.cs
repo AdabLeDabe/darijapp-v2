@@ -4,5 +4,5 @@ namespace Content.Application;
 
 public interface IUseCase<in TInput, TOutput>
 {
-    Result<TOutput> Execute(TInput input);
+    Task<Result<TOutput>> ExecuteAsync(TInput input);
 }

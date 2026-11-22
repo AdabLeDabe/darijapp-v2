@@ -5,9 +5,9 @@ namespace Content.Application;
 
 public class GetElementsUseCase(ITestElementRepository repository) : IUseCase<VoidInput, string>
 {
-    public Result<string> Execute(VoidInput _)
+    public async Task<Result<string>> ExecuteAsync(VoidInput _)
     {
-        var output = String.Join(' ', repository.GetElements());
+        var output = String.Join(' ', await repository.GetElements());
         return Result<string>.Success(output);
     }
 }

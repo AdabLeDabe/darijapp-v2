@@ -4,7 +4,7 @@ namespace Content.Application;
 
 public interface ITestElementRepository
 {
-    void AddElement(TestElement element);
-    void RemoveElement(int id);
-    IQueryable<TestElement> GetElements();
+    Task AddElement(TestElement element);
+    Task RemoveElement(int id);
+    Task<IQueryable<TestElement>> GetElements();
 }

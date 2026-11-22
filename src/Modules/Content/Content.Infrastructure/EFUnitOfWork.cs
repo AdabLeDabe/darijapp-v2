@@ -8,4 +8,9 @@ public class EFUnitOfWork(TestDbContext db) : IUnitOfWork
     {
         db.SaveChanges();
     }
+
+    public Task SaveChangesAsync()
+    {
+        return db.SaveChangesAsync();
+    }
 }
