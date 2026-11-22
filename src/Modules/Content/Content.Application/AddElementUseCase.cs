@@ -5,7 +5,7 @@ namespace Content.Application;
 
 public sealed class AddElementUseCase(ITestElementRepository repository) : IUseCase<AddElementInput, VoidOutput>
 {
-    public async Task<Result<VoidOutput>> ExecuteAsync(AddElementInput input)
+    public async Task<Result<VoidOutput>> ExecuteAsync(AddElementInput input, CancellationToken token)
     {
         var testElement = TestElement.Create(input.Content);
 

@@ -4,7 +4,7 @@ namespace Content.Application;
 
 public class RemoveElementUseCase(ITestElementRepository repository) : IUseCase<int, VoidOutput>
 {
-    public async Task<Result<VoidOutput>> ExecuteAsync(int input)
+    public async Task<Result<VoidOutput>> ExecuteAsync(int input, CancellationToken token)
     {
         await repository.RemoveElement(input);
 
