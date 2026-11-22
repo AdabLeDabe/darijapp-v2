@@ -4,5 +4,6 @@ public enum ResultStatus
 {
     Success,
     NotFound,
-    Forbidden
+    Forbidden,
+    Invalid
 }

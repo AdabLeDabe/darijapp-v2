@@ -20,4 +20,9 @@ public class Result<T>
     {
         return new Result<T>() { Status = ResultStatus.Success, Content = content };
     }
+
+    public static Result<T> Invalid()
+    {
+        return new Result<T>() { Status = ResultStatus.Invalid };
+    }
 }
