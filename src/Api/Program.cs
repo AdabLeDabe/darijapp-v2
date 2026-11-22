@@ -9,7 +9,7 @@ var connectionString = builder.Configuration.GetConnectionString("Default");
 
 builder.Services.AddDbContext<TestDbContext>(o => o.UseNpgsql(connectionString));
 builder.Services.AddScoped<ITestElementRepository, EfTestElementRepository>();
-builder.Services.AddScoped<IUnitOfWork, EFUnitOfWork>();
+builder.Services.AddScoped<IUnitOfWork, EfUnitOfWork>();
 builder.Services.AddWriteUseCase<AddElementUseCase, AddElementInput, VoidOutput>();
 builder.Services.AddWriteUseCase<RemoveElementUseCase, int, VoidOutput>();
 builder.Services.AddScoped<GetElementsUseCase>();
