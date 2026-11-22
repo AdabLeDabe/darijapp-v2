@@ -22,7 +22,9 @@ public sealed class RegisterUseCase(UserManager<AppUser> userManager, TimeProvid
             return Result<Guid>.Invalid();
         }
 
-        await userManager.AddToRoleAsync(user, Roles.Learner);
+        var roleAdded = await userManager.AddToRoleAsync(user, Roles.Learner);
+        if (!roleAdded.Succeeded)
+            throw new InvalidOperationException($"Unable to find role: {Roles.Learner}");
         return Result<Guid>.Success(user.Id);
     }
 }
