@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Identity.Infrastructure;
 
 public sealed class AuthDbContext(DbContextOptions<AuthDbContext> options)
-    : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>
+    : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>(options)
 {
     protected override void OnModelCreating(ModelBuilder builder)
     {
