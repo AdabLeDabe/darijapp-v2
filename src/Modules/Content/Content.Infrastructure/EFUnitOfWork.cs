@@ -5,13 +5,8 @@ namespace Content.Infrastructure;
 
 public class EFUnitOfWork(TestDbContext db) : IUnitOfWork
 {
-    public void SaveChanges()
+    public Task SaveChangesAsync(CancellationToken token)
     {
-        db.SaveChanges();
-    }
-
-    public Task SaveChangesAsync()
-    {
-        return db.SaveChangesAsync();
+        return db.SaveChangesAsync(token);
     }
 }

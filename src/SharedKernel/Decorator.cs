@@ -8,7 +8,7 @@ public sealed class Decorator<TInput, TOutput>(IUnitOfWork unitOfWork, IUseCase<
         var result = await inner.ExecuteAsync(input, token);
         if (result.Status == ResultStatus.Success)
         {
-            await unitOfWork.SaveChangesAsync();
+            await unitOfWork.SaveChangesAsync(token);
         }
         
         return result;

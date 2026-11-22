@@ -7,7 +7,7 @@ public class GetElementsUseCase(ITestElementRepository repository) : IUseCase<Vo
 {
     public async Task<Result<string>> ExecuteAsync(VoidInput _, CancellationToken token)
     {
-        var output = String.Join(' ', await repository.GetElements());
+        var output = String.Join(' ', await repository.GetElements(token));
         return Result<string>.Success(output);
     }
 }

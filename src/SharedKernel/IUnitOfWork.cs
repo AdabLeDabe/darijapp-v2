@@ -2,7 +2,5 @@ namespace SharedKernel;
 
 public interface IUnitOfWork
 {
-    void SaveChanges();
-
-    Task SaveChangesAsync();
+    Task SaveChangesAsync(CancellationToken token);
 }

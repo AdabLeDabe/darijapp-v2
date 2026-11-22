@@ -1,29 +1,28 @@
 using Content.Application;
 using Content.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace Content.Infrastructure;
 
-public class EFTestElementRepository(TestDbContext dbContext) : ITestElementRepository
+public class EfTestElementRepository(TestDbContext dbContext) : ITestElementRepository
 {
-    public async Task AddElement(TestElement element)
+    public async Task AddElement(TestElement element, CancellationToken? token = null)
     {
         await dbContext.TestElements.AddAsync(element);
     }
 
-    public Task RemoveElement(int id)
+    public async Task RemoveElement(int id, CancellationToken? token = null)
     {
-        var element = dbContext.TestElements.FirstOrDefault(e => e.Id == id);
+        var element = await dbContext.TestElements.FirstOrDefaultAsync(e => e.Id == id, token ?? CancellationToken.None);
 
         if (element != null)
         {
             dbContext.TestElements.Remove(element);
         }
-
-        return Task.CompletedTask;
     }
 
-    public async Task<IQueryable<TestElement>> GetElements()
+    public async Task<IReadOnlyList<TestElement>> GetElements(CancellationToken? token = null)
     {
-        return dbContext.TestElements.AsQueryable();
+        return await dbContext.TestElements.ToListAsync();
     }
 }

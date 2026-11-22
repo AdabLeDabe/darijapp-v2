@@ -6,7 +6,7 @@ public class RemoveElementUseCase(ITestElementRepository repository) : IUseCase<
 {
     public async Task<Result<VoidOutput>> ExecuteAsync(int input, CancellationToken token)
     {
-        await repository.RemoveElement(input);
+        await repository.RemoveElement(input, token);
 
         return Result<VoidOutput>.Success(new());
     }

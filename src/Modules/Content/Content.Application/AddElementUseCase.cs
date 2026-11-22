@@ -11,7 +11,7 @@ public sealed class AddElementUseCase(ITestElementRepository repository) : IUseC
 
         if (testElement is { Status: ResultStatus.Success, Content: not null })
         {
-            await repository.AddElement(testElement.Content);
+            await repository.AddElement(testElement.Content, token);
             return Result<VoidOutput>.Success(new());
         }
 
