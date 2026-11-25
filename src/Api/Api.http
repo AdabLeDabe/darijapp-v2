@@ -17,3 +17,26 @@ Content-Type: application/json
   "password": "abc",
   "displayName": "Court"
 }
+
+### Connexion
+POST http://localhost:5140/api/auth/login
+Content-Type: application/json
+
+{ "email": "test@example.com", "password": "Motdepasse1" }
+
+> {%
+    client.global.set("accessToken", response.body.accessToken);
+%}
+
+### Qui suis-je ? (200 attendu)
+GET http://localhost:5140/api/auth/me
+Authorization: Bearer {{accessToken}}
+
+### Sans token (401 attendu)
+GET http://localhost:5140/api/auth/me
+
+### Mauvais mot de passe (401 attendu)
+POST http://localhost:5140/api/auth/login
+Content-Type: application/json
+
+{ "email": "test@example.com", "password": "mauvais" }

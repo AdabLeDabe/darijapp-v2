@@ -25,4 +25,9 @@ public class Result<T>
     {
         return new Result<T>() { Status = ResultStatus.Invalid };
     }
+    
+    public static Result<T> Unauthorized()
+    {
+        return new Result<T>() { Status = ResultStatus.Unauthorized };
+    }
 }
